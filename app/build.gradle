@@ -1,7 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
-
+    id 'kotlin-kapt'
     id 'androidx.navigation.safeargs'
 }
 
@@ -10,7 +10,7 @@ android {
 
     defaultConfig {
         applicationId "com.triare.idpjetpackandroid"
-        minSdk 26
+        minSdk 25
         targetSdk 32
         versionCode 1
         versionName "1.0"
@@ -53,6 +53,9 @@ dependencies {
     // added view model dependencies
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version")
 
+    // livedata
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+
     // ViewBinding Delegate
     implementation 'com.github.kirich1409:viewbindingpropertydelegate:1.4.6'
 
@@ -67,4 +70,23 @@ dependencies {
     implementation "androidx.activity:activity-ktx:$activity_version"
     implementation "androidx.fragment:fragment-ktx:$fragment_version"
 
+    def work_version = "2.7.1"
+
+    // WorkManager + coroutines
+    implementation "androidx.work:work-runtime-ktx:$work_version"
+
+    // Glide
+    def glide_version = "4.12.0"
+
+    implementation "com.github.bumptech.glide:glide:$glide_version"
+    kapt "com.github.bumptech.glide:compiler:$glide_version"
+
+    // Retrofit
+    def retrofit_version = "2.9.0"
+
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+
+    // Gson
+    implementation 'com.google.code.gson:gson:2.8.6'
 }

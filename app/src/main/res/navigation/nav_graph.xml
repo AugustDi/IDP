@@ -23,5 +23,13 @@
             app:destination="@id/included_graph" />
     </fragment>
 
+    <action
+        android:id="@+id/action_global_fragmentMatchDetails"
+        app:destination="@id/matchDetailsFragment" />
+
     <include app:graph="@navigation/included_graph" />
+    <fragment
+        android:id="@+id/matchDetailsFragment"
+        android:name="com.triare.idpjetpackandroid.ui.match_details.MatchDetailsFragment"
+        android:label="MatchDetailsFragment" />
 </navigation>

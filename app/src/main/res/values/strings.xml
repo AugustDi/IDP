@@ -11,4 +11,9 @@
     <string name="go_home">go to the start position</string>
     <string name="your_team_name">Your Team Name</string>
     <string name="somewhere_title">It`s a team name that u typed</string>
+
+    <string name="downloading">Downloading…</string>
+    <string name="downloading_title">Downloading in progress</string>
+    <string name="download">download image</string>
+
 </resources>

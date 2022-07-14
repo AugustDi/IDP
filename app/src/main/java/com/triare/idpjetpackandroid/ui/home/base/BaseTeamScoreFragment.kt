@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.CreateMethod
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.triare.idpjetpackandroid.R
@@ -42,6 +43,13 @@ abstract class BaseTeamScoreFragment : Fragment() {
         initTeamName()
         action(binding)
         setTeamName(binding)
+        initMatchDetails()
+    }
+
+    private fun initMatchDetails() {
+        binding.actionDetails.setOnClickListener {
+            findNavController().navigate(R.id.action_global_fragmentMatchDetails)
+        }
     }
 
     private fun initTeamName() {
@@ -69,5 +77,5 @@ abstract class BaseTeamScoreFragment : Fragment() {
     }
 
     open fun action(binding: FragmentGameBaseBinding) {}
-    open fun setTeamName(binding: FragmentGameBaseBinding){}
+    open fun setTeamName(binding: FragmentGameBaseBinding) {}
 }
