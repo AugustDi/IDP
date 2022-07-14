@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/teamAFragment">
+    <fragment
+        android:id="@+id/teamAFragment"
+        android:name="com.triare.idpjetpackandroid.ui.home.team_a.TeamAFragment"
+        android:label="TeamAFragment"
+        tools:layout="@layout/fragment_game_base">
+        <action
+            android:id="@+id/action_fragment_to_second_graph"
+            app:destination="@id/included_graph" />
+    </fragment>
+    <fragment
+        android:id="@+id/teamBFragment"
+        android:name="com.triare.idpjetpackandroid.ui.home.team_b.TeamBFragment"
+        android:label="fragment_game_base"
+        tools:layout="@layout/fragment_game_base">
+        <action
+            android:id="@+id/action_teamBFragment_to_included_graph"
+            app:destination="@id/included_graph" />
+    </fragment>
+
+    <include app:graph="@navigation/included_graph" />
+</navigation>
